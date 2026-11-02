@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: $light-gray;
+  color: $dark-gray;
+}
+
+$white: #ffffff;
+$light-gray: #f3f4f8;
+$very-light-gray: #f0f0f0;
+$light-gray: #e5e7eb;
+$silver: #d1d5db;
+$gray: #9ca3af;
+$dark-gray: #1f2937;
+$indigo: #4f46e5;
+$crimson: #e11d48;
+
+$radius: 10px;
+
+$size-4: 4px;
+$size-8: 8px;
+$size-12: 12px;
+$size-16: 16px;
+$size-20: 20px;
+$size-24: 24px;
+$size-28: 28px;
+$size-32: 32px;
+$size-36: 36px;
+$size-40: 40px;

@@ -1,14 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: $light-gray;
-  color: $dark-gray;
-}
-
 $white: #ffffff;
 $light-gray: #f3f4f8;
 $very-light-gray: #f0f0f0;
@@ -31,3 +20,14 @@ $size-28: 28px;
 $size-32: 32px;
 $size-36: 36px;
 $size-40: 40px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: $light-gray;
+  color: $dark-gray;
+}

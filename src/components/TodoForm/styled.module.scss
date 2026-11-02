@@ -1,0 +1,24 @@
+@use 'sass:color';
+@use '../../style/global' as *;
+@use '../../style/mixins' as *;
+
+.form {
+  @include flex(flex-start, stretch, $size-8);
+}
+
+.input {
+  flex: 1;
+  padding: $size-12 $size-12;
+  border: 1px solid $silver;
+  border-radius: $radius;
+  font-size: $size-16;
+  @include focus-ring;
+}
+
+.submit {
+  @include button($indigo, $white);
+
+  &:hover:not(:disabled) {
+    background: color.adjust($indigo, $lightness: -8%);
+  }
+}

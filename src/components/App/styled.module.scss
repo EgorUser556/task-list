@@ -1,0 +1,28 @@
+@use '../../style/global' as *;
+
+.app {
+  max-width: 520px;
+  margin: $size-40 auto;
+  padding: $size-24;
+  background: $white;
+  border-radius: $size-16;
+  box-shadow: 0 $size-8 $size-32 rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  margin: 0 0 $size-20;
+  text-align: center;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.empty,
+.counter {
+  text-align: center;
+  color: $gray;
+  font-size: $size-12;
+}

@@ -1,0 +1,32 @@
+@use '../../style/global' as *;
+@use '../../style/mixins' as *;
+
+.item {
+  @include flex(space-between, center);
+  padding: $size-12 $size-4;
+  border-bottom: 1px solid $very-light-gray;
+}
+
+.label {
+  @include flex(flex-start, center, $size-12);
+  flex: 1;
+  cursor: pointer;
+  word-break: break-word;
+}
+
+.text {
+  transition: color 0.2s;
+}
+
+.done .text {
+  text-decoration: line-through;
+  color: $gray;
+}
+
+.delete {
+  @include button(transparent, $crimson);
+
+  &:hover {
+    background: rgba($crimson, 0.1);
+  }
+}

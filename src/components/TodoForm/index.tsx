@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type SubmitEvent } from 'react';
 
 import styled from './styled.module.scss';
 import type { TodoFormProps } from './types';
@@ -6,7 +6,7 @@ import type { TodoFormProps } from './types';
 const TodoForm = ({ onAdd }: TodoFormProps) => {
   const [text, setText] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     const trimmed = text.trim();
     if (!trimmed) return;

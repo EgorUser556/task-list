@@ -1,37 +1,12 @@
-import { useMemo, useState } from 'react';
-
-import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { useTodos } from '../../hooks/useTodos';
 import TodoFilters from '../TodoFilter';
-import type { Filter } from '../TodoFilter/types';
 import TodoForm from '../TodoForm';
 import TodoItem from '../TodoItem';
-import type { Todo } from '../TodoItem/types';
 import styled from './styled.module.scss';
 
 const App = () => {
-  const [todos, setTodos] = useLocalStorage<Todo[]>('todos', []);
-  const [filter, setFilter] = useState<Filter>('all');
-
-  const addTodo = (text: string) =>
-    setTodos((prev) => [{ id: crypto.randomUUID(), text, completed: false }, ...prev]);
-
-  const toggleTodo = (id: string) =>
-    setTodos((prev) => prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)));
-
-  const deleteTodo = (id: string) => setTodos((prev) => prev.filter((t) => t.id !== id));
-
-  const visibleTodos = useMemo(() => {
-    switch (filter) {
-      case 'active':
-        return todos.filter((t) => !t.completed);
-      case 'completed':
-        return todos.filter((t) => t.completed);
-      default:
-        return todos;
-    }
-  }, [todos, filter]);
-
-  const activeCount = todos.filter((t) => !t.completed).length;
+  const { visibleTodos, activeCount, filter, setFilter, addTodo, toggleTodo, deleteTodo } =
+    useTodos();
 
   return (
     <main className={styled.app}>
